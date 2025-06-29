@@ -1,0 +1,83 @@
+/* Register.css */
+
+.register-wrapper {
+  background-color: #0a1f44; /* Dark navy blue */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form {
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  width: 360px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.register-title {
+  text-align: center;
+  color: #0a1f44;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.register-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.register-input,
+.register-select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.register-input:focus,
+.register-select:focus {
+  border-color: #1f4e79;
+  outline: none;
+  box-shadow: 0 0 5px rgba(31, 78, 121, 0.4);
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1f4e79;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #153a5b;
+}
+
+.register-login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #888;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.register-login-button:hover {
+  background-color: #444;
+}
