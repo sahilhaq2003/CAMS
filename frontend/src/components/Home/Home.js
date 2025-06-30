@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+
 import './Common.css';
 
 function Home() {
   return (
     <>
-      <Nav />
+      
       <div className="page-container">
         <h2>Welcome to the Criminal and Accidents Management System (CAMS)</h2>
         <p>

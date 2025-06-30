@@ -134,4 +134,23 @@ p {
   background: #153a5b;
 }
 
+/* Navigation Profile Icon */
+.nav-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffcc00;
+  color: #0a1f44;
+  border-radius: 50%;
+  width: 2.3rem;
+  height: 2.3rem;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+
+.nav-profile-icon:hover {
+  background: #ffe066;
+}
+
 

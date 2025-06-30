@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+
 import './ContactUs.css';
 
 function ContactUs() {
   return (
     <>
-      <Nav />
+     
 
       <div className="contact-container">
         <h2 className="contact-title">Contact Us</h2>

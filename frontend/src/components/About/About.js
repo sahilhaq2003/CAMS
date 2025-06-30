@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../Nav/Nav';
+
 import './About.css';
 
 function About() {
   return (
     <>
-      <Navbar />
+      
 
       <div className="about-container">
         <h2 className="about-title">About CAMS</h2>

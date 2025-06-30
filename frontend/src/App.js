@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
@@ -7,13 +7,18 @@ import Profile from './components/Profile/Profile';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import ContactUs from './components/ContactUs/ContactUs';
+import Nav from './components/Nav/Nav';
 
 function App() {
-  // This is a simple example. In a real app, use context or localStorage for auth.
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+
+  useEffect(() => {
+    setIsAuthenticated(!!localStorage.getItem('token'));
+  }, []);
 
   return (
     <Router>
+      <Nav isAuthenticated={isAuthenticated} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -21,13 +26,25 @@ function App() {
         <Route
           path="/login"
           element={
-            isAuthenticated ? <Navigate to="/" replace /> : <Login setIsAuthenticated={setIsAuthenticated} />
+            isAuthenticated
+              ? <Navigate to="/" replace />
+              : <Login setIsAuthenticated={setIsAuthenticated} />
           }
         />
         <Route
           path="/register"
           element={
-            isAuthenticated ? <Navigate to="/" replace /> : <Register setIsAuthenticated={setIsAuthenticated} />
+            isAuthenticated
+              ? <Navigate to="/" replace />
+              : <Register setIsAuthenticated={setIsAuthenticated} />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            isAuthenticated
+              ? <Profile />
+              : <Navigate to="/login" replace />
           }
         />
       </Routes>

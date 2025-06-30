@@ -3,21 +3,21 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-function Login(props) {
+function Login({ setIsAuthenticated }) {
   const [form, setForm] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/users/login', form);
-      localStorage.setItem('token', res.data.token); // Save token
-      props.setIsAuthenticated(true);
-      navigate('/'); // Redirect after login
-    } catch (err) {
-      alert('Login failed: ' + (err.response?.data?.error || 'Unknown error'));
+      localStorage.setItem('token', res.data.token);
+      setIsAuthenticated(true);
+      navigate('/'); // Redirect to home after login
+    } catch (error) {
+      alert(error.response?.data?.message || 'Login failed');
     }
   };
 
