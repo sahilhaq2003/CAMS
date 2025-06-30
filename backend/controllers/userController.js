@@ -31,12 +31,13 @@ exports.login = async (req, res) => {
 };
 
 exports.getProfile = async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id).select("-password");
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+  const user = await User.findById(req.user.id);
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  res.json({
+    name: user.name,
+    email: user.email,
+    role: user.role
+  });
 };
 
 // Update profile

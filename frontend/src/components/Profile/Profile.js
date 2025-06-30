@@ -32,17 +32,26 @@ function Profile() {
   };
 
   const handleEditChange = e => {
-    setEditForm({ ...editForm, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setEditForm({ ...editForm, [name]: value });
   };
 
   const handleEditSubmit = async e => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
+      const updates = {
+        name: editForm.name,
+        email: editForm.email,
+      };
+      if (editForm.password) updates.password = editForm.password;
+
       const res = await axios.put(
         'http://localhost:5000/api/users/profile',
-        editForm,
-        { headers: { Authorization: `Bearer ${token}` } }
+        updates,
+        {
+          headers: { Authorization: `Bearer ${token}` }
+        }
       );
       setUser(res.data);
       setEditMode(false);

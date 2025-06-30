@@ -1,137 +1,116 @@
 /* Profile.css */
 
 .profile-wrapper {
-  background-color: #0a1f44; /* Police navy blue */
-  color: #fff;
-  min-height: 100vh;
-  padding: 2rem;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-wrapper h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.profile-wrapper p {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+}
+
+.profile-edit-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffcc00; /* Gold for attention */
-}
-
-p {
-  font-size: 1.1rem;
-  margin: 0.4rem 0;
-  color: #ffffff;
-}
-
-.profile-loading {
-  font-size: 1.2rem;
-  color: #ffffff;
-}
-
-/* Action Buttons */
-.profile-update-button,
-.profile-delete-button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-/* Update Button Style */
-.profile-update-button {
-  background-color: #1f4e79;
-  color: #fff;
-}
-
-.profile-update-button:hover {
-  background-color: #153a5b;
-}
-
-/* Delete Button Style */
-.profile-delete-button {
-  background-color: #b30000;
-  color: #fff;
-}
-
-.profile-delete-button:hover {
-  background-color: #800000;
-}
-
-.profile-logout-button {
-  background: #888;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.profile-logout-button:hover {
-  background: #444;
-}
-
-/* Profile Edit Form Styles */
-.profile-edit-form {
-  width: 100%;
-  max-width: 350px;
-  margin: 1.5rem 0;
-  background: rgba(10, 31, 68, 0.95);
-  padding: 1.5rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  gap: 15px;
 }
 
 .profile-edit-form label {
-  display: block;
-  margin-bottom: 1rem;
-  color: #ffcc00;
   font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
 }
 
 .profile-edit-form input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #1f4e79;
-  border-radius: 5px;
-  background: #fff;
-  color: #0a1f44;
-  font-size: 1rem;
-}
-
-.profile-edit-form input:disabled {
-  background: #e0e0e0;
-  color: #888;
-  cursor: not-allowed;
-}
-
-.profile-edit-form input:focus {
-  outline: 2px solid #ffcc00;
-  border-color: #ffcc00;
+  margin-top: 5px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .profile-edit-form button {
-  margin-right: 1rem;
-  padding: 0.5rem 1.2rem;
+  padding: 10px 15px;
   border: none;
-  border-radius: 6px;
-  background: #1f4e79;
-  color: #fff;
-  font-weight: 500;
+  border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s ease;
+}
+
+.profile-edit-form button[type="submit"] {
+  background-color: #0a8754;
+  color: white;
 }
 
 .profile-edit-form button[type="button"] {
-  background: #888;
+  background-color: #cccccc;
+  color: #333;
 }
 
 .profile-edit-form button:hover {
-  background: #153a5b;
+  opacity: 0.9;
+}
+
+.profile-update-button,
+.profile-delete-button,
+.profile-logout-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-update-button {
+  background-color: #0077cc;
+  color: white;
+}
+
+.profile-update-button:hover {
+  background-color: #005fa3;
+}
+
+.profile-delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.profile-delete-button:hover {
+  background-color: #c0392b;
+}
+
+.profile-logout-button {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.profile-logout-button:hover {
+  background-color: #636e72;
+}
+
+.profile-loading {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 50px;
 }
 
 /* Navigation Profile Icon */
