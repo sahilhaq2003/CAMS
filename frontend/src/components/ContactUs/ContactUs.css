@@ -1,0 +1,38 @@
+/* ContactUs.css */
+
+.contact-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a1f44;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #0a1f44;
+}
+
+.contact-paragraph,
+.contact-note {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.contact-info-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}

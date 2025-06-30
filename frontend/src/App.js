@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Profile from './components/Profile/Profile';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import ContactUs from './components/ContactUs/ContactUs';
 
 function App() {
   // This is a simple example. In a real app, use context or localStorage for auth.
@@ -12,12 +15,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            isAuthenticated ? <Profile /> : <Navigate to="/login" replace />
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route
           path="/login"
           element={

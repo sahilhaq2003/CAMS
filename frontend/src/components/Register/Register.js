@@ -16,9 +16,13 @@ function Register(props) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/users/register', form);
-    alert('Registered successfully');
-    props.setIsAuthenticated(true);
+    try {
+      await axios.post('http://localhost:5000/api/users/register', form);
+      alert('Registered successfully');
+      navigate('/login'); // Redirect to login page
+    } catch (error) {
+      alert(error.response?.data?.message || 'Registration failed');
+    }
   };
 
   return (

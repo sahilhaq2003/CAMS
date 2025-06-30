@@ -1,0 +1,26 @@
+/* About.css */
+
+.about-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a1f44;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #0a1f44;
+}
+
+.about-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #333;
+}

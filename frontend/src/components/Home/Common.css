@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f8;
+  color: #0a1f44;
+}
+
+.navbar {
+  background-color: #0a1f44;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-title {
+  color: #ffcc00;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar-links .nav-link {
+  margin-left: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+  color: #ffcc00;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.function-section {
+  margin-top: 2rem;
+}
+
+.function-section h3 {
+  color: #0a1f44;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.function-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  color: #333;
+}
+
+.function-section li {
+  margin-bottom: 0.4rem;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.nav-auth-btn {
+  background: #1f4e79;
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  border: none;
+  outline: none;
+}
+
+.nav-auth-btn:hover,
+.nav-auth-btn:focus {
+  background: #153a5b;
+  color: #ffcc00;
+}
+
+.nav-auth-btn-register {
+  background: #ffcc00;
+  color: #0a1f44;
+}
+
+.nav-auth-btn-register:hover,
+.nav-auth-btn-register:focus {
+  background: #ffe066;
+  color: #0a1f44;
+}
