@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import ContactUs from './components/ContactUs/ContactUs';
 import Nav from './components/Nav/Nav';
-
+import axios from 'axios';
 
 // Force logout on first visit only
 if (!localStorage.getItem('firstVisitDone')) {
@@ -18,14 +18,31 @@ if (!localStorage.getItem('firstVisitDone')) {
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setIsAuthenticated(!!localStorage.getItem('token'));
-  }, []);
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token);
+
+    if (token) {
+      axios.get('http://localhost:5000/api/users/profile', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((res) => {
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.error('Failed to fetch user profile:', err);
+          setUser(null);
+        });
+    } else {
+      setUser(null);
+    }
+  }, [isAuthenticated]);
 
   return (
     <Router>
-      <Nav isAuthenticated={isAuthenticated} />
+      <Nav isAuthenticated={isAuthenticated} user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
   }
   try {
     const token = authHeader.split(' ')[1];
-    const decoded = jwt.verify(token, "secret"); // Use your secret
+    const decoded = jwt.verify(token, "secret");
     req.user = decoded;
     next();
   } catch (err) {

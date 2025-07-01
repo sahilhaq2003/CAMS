@@ -1,111 +1,166 @@
-/* Profile.css */
+/* Police-style theme: navy, gray, white */
+body {
+  background-color: #f3f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .profile-wrapper {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 60px auto;
   background-color: #ffffff;
-  border-radius: 16px;
-  padding: 30px 40px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .profile-wrapper h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: #0a1f44;
+  font-size: 24px;
 }
 
 .profile-wrapper p {
   font-size: 16px;
-  color: #555;
-  margin: 8px 0;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
 }
 
+/* Profile Image */
+.profile-image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 25px;
+  border: 3px solid #005fa3;
+  background-color: #f0f0f0;
+}
+
+/* Form */
 .profile-edit-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .profile-edit-form label {
-  font-weight: 500;
-  color: #333;
+  font-weight: 600;
+  color: #0a1f44;
   display: flex;
   flex-direction: column;
   font-size: 14px;
 }
 
 .profile-edit-form input {
-  margin-top: 5px;
-  padding: 10px 12px;
+  margin-top: 6px;
+  padding: 10px 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
+  background-color: #f9f9f9;
 }
 
+.profile-edit-form input[disabled] {
+  background-color: #eaeaea;
+  color: #666;
+}
+
+/* Form buttons */
 .profile-edit-form button {
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-weight: 600;
 }
 
 .profile-edit-form button[type="submit"] {
-  background-color: #0a8754;
+  background-color: #005fa3;
   color: white;
 }
 
 .profile-edit-form button[type="button"] {
-  background-color: #cccccc;
-  color: #333;
+  background-color: #b0bec5;
+  color: #263238;
 }
 
 .profile-edit-form button:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
-.profile-update-button,
-.profile-delete-button,
-.profile-logout-button {
+/* Action Buttons */
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.profile-actions button {
   flex: 1;
-  padding: 10px;
-  font-size: 14px;
+  padding: 12px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
   transition: background-color 0.2s ease;
 }
 
-.profile-update-button {
-  background-color: #0077cc;
+.profile-actions button:nth-child(1) {
+  background-color: #007bff;
   color: white;
 }
 
-.profile-update-button:hover {
+.profile-actions button:nth-child(1):hover {
   background-color: #005fa3;
 }
 
-.profile-delete-button {
-  background-color: #e74c3c;
+.profile-actions button:nth-child(2) {
+  background-color: #d32f2f;
   color: white;
 }
 
-.profile-delete-button:hover {
-  background-color: #c0392b;
+.profile-actions button:nth-child(2):hover {
+  background-color: #b71c1c;
 }
 
-.profile-logout-button {
-  background-color: #7f8c8d;
+.profile-actions button:nth-child(3) {
+  background-color: #546e7a;
   color: white;
 }
 
-.profile-logout-button:hover {
-  background-color: #636e72;
+.profile-actions button:nth-child(3):hover {
+  background-color: #37474f;
 }
 
+/* Image Upload */
+.image-upload {
+  margin-top: 15px;
+}
+
+.image-upload label {
+  font-weight: 600;
+  color: #0a1f44;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.image-upload input[type="file"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fafafa;
+}
+
+/* Loading state */
 .profile-loading {
   text-align: center;
   font-size: 18px;
@@ -113,23 +168,14 @@
   margin-top: 50px;
 }
 
-/* Navigation Profile Icon */
-.nav-profile-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffcc00;
-  color: #0a1f44;
-  border-radius: 50%;
-  width: 2.3rem;
-  height: 2.3rem;
-  text-decoration: none;
-  margin-left: 1rem;
-  transition: background 0.2s;
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.nav-profile-icon:hover {
-  background: #ffe066;
-}
-
-

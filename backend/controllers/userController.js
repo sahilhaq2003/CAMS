@@ -2,7 +2,6 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-
 exports.register = async (req, res) => {
   const { name, email, password, role } = req.body;
   try {
@@ -36,18 +35,16 @@ exports.getProfile = async (req, res) => {
   res.json({
     name: user.name,
     email: user.email,
-    role: user.role
+    role: user.role,
+    profileImage: user.profileImage
   });
 };
 
-// Update profile
 exports.updateProfile = async (req, res) => {
   try {
     const updates = {};
     if (req.body.name) updates.name = req.body.name;
-    if (req.body.username) updates.username = req.body.username;
     if (req.body.email) updates.email = req.body.email;
-    if (req.body.role) updates.role = req.body.role;
     if (req.body.password) {
       updates.password = await bcrypt.hash(req.body.password, 10);
     }
@@ -58,7 +55,6 @@ exports.updateProfile = async (req, res) => {
   }
 };
 
-// Delete profile
 exports.deleteProfile = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.user.id);

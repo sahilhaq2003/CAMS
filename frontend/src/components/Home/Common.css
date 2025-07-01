@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -5,77 +6,64 @@ body {
   color: #0a1f44;
 }
 
+/* Navbar Styles */
 .navbar {
   background-color: #0a1f44;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap; /* Keep all items on one line */
+  gap: 1rem; /* spacing between major sections */
 }
 
 .navbar-title {
   color: #ffcc00;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.9rem;
+  font-weight: 700;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem; /* space between links */
+  flex-grow: 1; /* take remaining space */
+  justify-content: center; /* center links horizontally */
 }
 
 .navbar-links .nav-link {
-  margin-left: 1.5rem;
   color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
   text-decoration: none;
-  font-weight: 500;
   transition: color 0.3s ease;
+  white-space: nowrap; /* prevent wrapping */
 }
 
 .navbar-links .nav-link:hover {
   color: #ffcc00;
 }
 
-.page-container {
-  max-width: 900px;
-  margin: 3rem auto;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.function-section {
-  margin-top: 2rem;
-}
-
-.function-section h3 {
-  color: #0a1f44;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.function-section ul {
-  padding-left: 1.5rem;
-  list-style-type: disc;
-  color: #333;
-}
-
-.function-section li {
-  margin-bottom: 0.4rem;
-}
-
+/* Auth Buttons */
 .navbar-auth {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  margin-left: auto;
+  flex-shrink: 0; /* prevent shrinking */
 }
 
 .nav-auth-btn {
   background: #1f4e79;
   color: #fff;
-  padding: 0.45rem 1.1rem;
-  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s;
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .nav-auth-btn:hover,
@@ -95,19 +83,39 @@ body {
   color: #0a1f44;
 }
 
-
-
-
-/* Common.css */
-
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+/* Profile Image in Navbar */
+.nav-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
+.nav-profile-photo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-profile-photo:hover {
+  transform: scale(1.05);
+  border-color: #ffcc00;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Headers */
 .page-container h2 {
   text-align: center;
   color: #333;
@@ -121,6 +129,7 @@ body {
   font-size: 16px;
 }
 
+/* Cards Section */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -166,4 +175,52 @@ body {
   left: 0;
   color: #0c8a6e;
   font-weight: bold;
+}
+
+/* Function Section */
+.function-section {
+  margin-top: 2rem;
+}
+
+.function-section h3 {
+  color: #0a1f44;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.function-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  color: #333;
+}
+
+.function-section li {
+  margin-bottom: 0.4rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-title {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-links {
+    flex-grow: unset;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .navbar-auth {
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
