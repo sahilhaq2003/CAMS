@@ -9,6 +9,13 @@ import About from './components/About/About';
 import ContactUs from './components/ContactUs/ContactUs';
 import Nav from './components/Nav/Nav';
 
+
+// Force logout on first visit only
+if (!localStorage.getItem('firstVisitDone')) {
+  localStorage.removeItem('token');
+  localStorage.setItem('firstVisitDone', 'yes');
+}
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
 
