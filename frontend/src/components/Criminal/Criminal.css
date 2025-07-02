@@ -1,219 +1,280 @@
-/* Container */
+/* Global Font & Container */
 .criminal-container {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 2rem auto;
-  background: #fff;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Headings */
+/* Heading */
 .criminal-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #1e293b;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
 }
 
-/* List styles */
+/* Search Section */
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.8rem;
+}
+
+.criminal-search {
+  padding: 0.7rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  padding: 0.7rem 1.2rem;
+  background-color: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.search-btn:hover {
+  background-color: #0d504b;
+}
+
+/* Add Button */
+.add-btn {
+  display: block;
+  margin: 0 auto 2rem auto;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.add-btn:hover {
+  background-color: #1e40af;
+}
+
+/* List Styles */
 .criminal-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.criminal-list li {
+.criminal-card {
   display: flex;
   align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.criminal-card:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Photo */
+.criminal-photo {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #cbd5e1;
+  background-color: #e5e7eb;
+}
+
+/* Criminal Info */
+.criminal-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  padding: 0.8rem 0;
 }
 
-.criminal-list li:last-child {
-  border-bottom: none;
-}
-
-/* Criminal name */
 .criminal-name {
+  font-size: 1.2rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
 }
 
-/* Action buttons */
-.criminal-actions button,
-.criminal-actions a {
-  margin-left: 0.5rem;
-  padding: 0.3rem 0.7rem;
+.arrest-date {
   font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 0.4rem;
+}
+
+/* Buttons */
+.criminal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   border: none;
   border-radius: 4px;
+  color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   text-decoration: none;
-  color: white;
+  transition: background-color 0.2s ease;
 }
 
-.criminal-actions .view-btn {
-  background-color: #4caf50;
+.view-btn {
+  background-color: #16a34a;
+}
+.view-btn:hover {
+  background-color: #15803d;
 }
 
-.criminal-actions .edit-btn {
-  background-color: #2196f3;
+.edit-btn {
+  background-color: #3b82f6;
+}
+.edit-btn:hover {
+  background-color: #2563eb;
 }
 
-.criminal-actions .delete-btn {
-  background-color: #f44336;
+.delete-btn {
+  background-color: #dc2626;
+}
+.delete-btn:hover {
+  background-color: #b91c1c;
 }
 
-.criminal-actions button:hover,
-.criminal-actions a:hover {
-  opacity: 0.85;
+/* Arrest History Entry (in View Page) */
+.arrest-history-entry {
+  border: 1px solid #d1d5db;
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
 }
 
-/* Form styles */
+.arrest-history-entry label {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  color: #334155;
+}
+
+/* Forms */
 .criminal-form label {
   display: block;
   margin-top: 1rem;
   font-weight: 600;
-  color: #444;
+  color: #1e293b;
 }
 
 .criminal-form input[type="text"],
 .criminal-form input[type="date"],
 .criminal-form textarea {
   width: 100%;
-  padding: 0.5rem 0.6rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.4rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
   font-size: 1rem;
-  box-sizing: border-box;
   font-family: inherit;
-  resize: vertical;
-}
-
-.criminal-form textarea {
-  min-height: 60px;
+  background-color: #ffffff;
 }
 
 .criminal-form input[type="file"] {
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
 }
 
-/* Form buttons */
+.criminal-form textarea {
+  min-height: 70px;
+}
+
+/* Form Buttons */
 .criminal-form button[type="submit"],
 .criminal-form button[type="button"],
-.add-btn,
-.delete-btn,
 .cancel-btn {
   margin-top: 1.5rem;
   padding: 0.6rem 1.3rem;
   border: none;
   border-radius: 5px;
   font-weight: 700;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  color: white;
 }
 
-/* Submit button */
-.criminal-form button[type="submit"],
-.add-btn {
+.criminal-form button[type="submit"] {
   background-color: #1976d2;
 }
-
-.criminal-form button[type="submit"]:hover,
-.add-btn:hover {
+.criminal-form button[type="submit"]:hover {
   background-color: #1565c0;
 }
 
-/* Cancel button */
 .cancel-btn {
-  background-color: #757575;
+  background-color: #6b7280;
   margin-left: 1rem;
 }
-
 .cancel-btn:hover {
-  background-color: #5a5a5a;
+  background-color: #4b5563;
 }
 
-/* Delete button */
-.delete-btn {
-  background-color: #f44336;
-}
-
-.delete-btn:hover {
-  background-color: #d32f2f;
-}
-
-/* Arrest history entries */
-.arrest-history-entry {
-  border: 1px solid #bbb;
-  padding: 0.8rem;
-  border-radius: 5px;
-  margin-top: 0.8rem;
-  background-color: #f9f9f9;
-}
-
-.arrest-history-entry label {
-  display: block;
-  margin-top: 0.3rem;
-}
-
-/* Criminal detail photo */
-.criminal-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-}
-
-/* Back button */
+/* Back Button */
 .back-button {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #555;
+  background-color: #1f2937;
   color: white;
   padding: 0.6rem 1.3rem;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-
 .back-button:hover {
-  background-color: #333;
+  background-color: #111827;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .criminal-list li {
+/* Responsive */
+@media (max-width: 640px) {
+  .criminal-card {
     flex-direction: column;
     align-items: flex-start;
   }
-  
-  .criminal-actions {
-    margin-top: 0.5rem;
+
+  .criminal-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
-  
+
+  .criminal-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
   .criminal-actions button,
   .criminal-actions a {
-    margin-left: 0;
-    margin-right: 0.5rem;
+    width: 100%;
+    margin: 0.25rem 0;
   }
-}
-
-.criminal-actions .edit-btn {
-  background-color: #2196f3;
-}
-
-.criminal-actions .delete-btn {
-  background-color: #f44336;
-}
-
-.criminal-actions button:hover,
-.criminal-actions a:hover {
-  opacity: 0.85;
 }

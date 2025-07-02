@@ -1,0 +1,85 @@
+.navbar {
+  background-color: #0f172a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-bottom: 2px solid #1e293b;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 2rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-auth-btn {
+  padding: 0.4rem 0.9rem;
+  background-color: transparent;
+  border: 1px solid #94a3b8;
+  color: #cbd5e1;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-auth-btn:hover {
+  background-color: #1e293b;
+  color: white;
+  border-color: white;
+}
+
+.nav-auth-btn-register {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+.nav-auth-btn-register:hover {
+  background-color: #1e40af;
+}
+
+.nav-profile-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #38bdf8;
+  background-color: #fff;
+}
+
