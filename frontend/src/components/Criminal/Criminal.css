@@ -1,0 +1,219 @@
+/* Container */
+.criminal-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.criminal-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* List styles */
+.criminal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.criminal-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem 0;
+}
+
+.criminal-list li:last-child {
+  border-bottom: none;
+}
+
+/* Criminal name */
+.criminal-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Action buttons */
+.criminal-actions button,
+.criminal-actions a {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.criminal-actions .view-btn {
+  background-color: #4caf50;
+}
+
+.criminal-actions .edit-btn {
+  background-color: #2196f3;
+}
+
+.criminal-actions .delete-btn {
+  background-color: #f44336;
+}
+
+.criminal-actions button:hover,
+.criminal-actions a:hover {
+  opacity: 0.85;
+}
+
+/* Form styles */
+.criminal-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.criminal-form input[type="text"],
+.criminal-form input[type="date"],
+.criminal-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.criminal-form textarea {
+  min-height: 60px;
+}
+
+.criminal-form input[type="file"] {
+  margin-top: 0.4rem;
+}
+
+/* Form buttons */
+.criminal-form button[type="submit"],
+.criminal-form button[type="button"],
+.add-btn,
+.delete-btn,
+.cancel-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+/* Submit button */
+.criminal-form button[type="submit"],
+.add-btn {
+  background-color: #1976d2;
+}
+
+.criminal-form button[type="submit"]:hover,
+.add-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: #757575;
+  margin-left: 1rem;
+}
+
+.cancel-btn:hover {
+  background-color: #5a5a5a;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Arrest history entries */
+.arrest-history-entry {
+  border: 1px solid #bbb;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-top: 0.8rem;
+  background-color: #f9f9f9;
+}
+
+.arrest-history-entry label {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* Criminal detail photo */
+.criminal-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+/* Back button */
+.back-button {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #555;
+  color: white;
+  padding: 0.6rem 1.3rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .criminal-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .criminal-actions {
+    margin-top: 0.5rem;
+  }
+  
+  .criminal-actions button,
+  .criminal-actions a {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+}
+
+.criminal-actions .edit-btn {
+  background-color: #2196f3;
+}
+
+.criminal-actions .delete-btn {
+  background-color: #f44336;
+}
+
+.criminal-actions button:hover,
+.criminal-actions a:hover {
+  opacity: 0.85;
+}
