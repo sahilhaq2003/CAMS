@@ -74,21 +74,41 @@ function App() {
 
         {/* ✅ Criminal Management */}
         <Route
-          path="/criminals"
-          element={isAuthenticated ? <CriminalList /> : <Navigate to="/login" replace />}
-        />
-        <Route
-          path="/criminals/add"
-          element={isAuthenticated ? <CriminalForm /> : <Navigate to="/login" replace />}
-        />
-        <Route
-          path="/criminals/edit/:id"
-          element={isAuthenticated ? <CriminalForm /> : <Navigate to="/login" replace />}
-        />
-        <Route
-          path="/criminals/view/:id"
-          element={isAuthenticated ? <CriminalDetail /> : <Navigate to="/login" replace />}
-        />
+  path="/criminals"
+  element={
+    isAuthenticated && (user?.role === 'Police Officer' || user?.role === 'Investigator')
+      ? <CriminalList />
+      : <Navigate to="/" replace />
+  }
+/>
+
+  <Route
+    path="/criminals/add"
+    element={
+    isAuthenticated && (user?.role === 'Police Officer' || user?.role === 'Investigator')
+      ? <CriminalForm />
+      : <Navigate to="/" replace />
+    }
+  />
+
+   <Route
+    path="/criminals/edit/:id"
+    element={
+    isAuthenticated && (user?.role === 'Police Officer' || user?.role === 'Investigator')
+      ? <CriminalForm />
+      : <Navigate to="/" replace />
+   }
+  />
+
+  <Route
+   path="/criminals/view/:id"
+   element={
+    isAuthenticated && (user?.role === 'Police Officer' || user?.role === 'Investigator')
+      ? <CriminalDetail />
+      : <Navigate to="/" replace />
+   }
+  />
+
       </Routes>
     </Router>
   );
